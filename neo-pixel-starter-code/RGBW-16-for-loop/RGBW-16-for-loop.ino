@@ -11,7 +11,7 @@
 
 #define NUM_LEDS 16
 
-#define BRIGHTNESS 50
+#define BRIGHTNESS 25
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, PIN, NEO_GRBW + NEO_KHZ800);
 
@@ -28,18 +28,22 @@ int red = 0, green= 0, blue = 0, white = 10;
 int wait = 500;
 int led = 0;
 int i;
+int x = 0;
 
 void loop() {
-  
   for ( led = 0; led < 16; led++){  
     strip.setPixelColor(led, red, green , blue, white);
+    led = led + x;
   }//end of for loop
     strip.show();
     delay(wait);
-    red = red + 8;
-    green = green + 16;
-    blue = blue + 32;
+    x=x+1;
+    red = red + 25;
+    green = green + 50;
+    blue = blue + 75;
     white = white + 1;
+    
+    if (x > 16) x = 0;
 
     if (red > 255) red = 0;
     if (green > 255) green = 0;
