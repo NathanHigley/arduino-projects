@@ -21,26 +21,27 @@ void loop() {
       myDecoder.decode();
      if(myDecoder.value==0x22DDA857){
       Serial.println(" up ");     
-      servoRight.writeMicroseconds(1500);
-      servoLeft.writeMicroseconds(1500);
-      delay(2000); 
+      servoRight.writeMicroseconds(1300);
+      servoLeft.writeMicroseconds(1700);
+      delay(500); 
         }
      if(myDecoder.value==0x22DD28D7){
       Serial.println(" down ");     
-      servoRight.writeMicroseconds(0);
-      servoLeft.writeMicroseconds(0); 
+      servoRight.writeMicroseconds(1500);
+      servoLeft.writeMicroseconds(1500);
+      delay(2000); 
         }
      if(myDecoder.value==0x22DDC837){
       Serial.println(" right ");
-      servoRight.writeMicroseconds(1500);
-      servoLeft.writeMicroseconds(0);
-      delay(2000); 
+      servoRight.writeMicroseconds(1700);
+      servoLeft.writeMicroseconds(1700);
+      delay(600); 
         }
      if(myDecoder.value==0x22DD9867){
       Serial.println(" left "); 
-      servoRight.writeMicroseconds(0);
-      servoLeft.writeMicroseconds(1500);
-      delay(2000); 
+      servoRight.writeMicroseconds(1300);
+      servoLeft.writeMicroseconds(1300);
+      delay(600); 
         }
     myReceiver.enableIRIn(); 
   }
